@@ -18,6 +18,33 @@ body {
     position: relative;
 }
 
+.sometext {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 100px;
+    width: 100%;
+    margin: 0 auto;
+    color:white;
+    z-index:1; 
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self:center;
+    top:400px;
+}
+
+#button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self:center;
+    color:white;
+    margin-top: 80px;
+    font-size: 24px;
+    border:solid 1px white;
+    border-radius: 5px;
+}
+
+
 .hero img {
     width: 100%;
     position: absolute;
@@ -36,6 +63,7 @@ body {
     display:flex; 
     justify-content:center;
     padding-top: 20px;
+    text-align: center;
 }
 
 .our {
@@ -65,19 +93,6 @@ body {
     z-index:-1;
 } 
 
-.sometext {
-    font-family: 'Open Sans',sans-serif;
-    font-size: 80px;
-    width: 100%;
-    margin: 0 auto;
-    color:white;
-    z-index:1; 
-    position:absolute;
-    display: flex;
-    justify-content: center;
-    align-self:center;
-    top:450px;
-}
 
 .image {
     height: 100vh;
@@ -88,8 +103,6 @@ body {
     justify-content: center;
     top:-50px;   
     transition:1s; 
-    
-    
 }
 
 .info {
@@ -108,6 +121,18 @@ body {
 }
 
 .phone {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    font-size: 24px;
+    font-family: 'Open Sans',sans-serif;
+    color:white;
+    text-align:center;
+    display: flex;
+    align-items: center;
+}
+
+/* .phone {
     height:100vh;
     width: 100%;
     background-color: black;
@@ -146,7 +171,7 @@ body {
     overflow: hidden;  
     transition:1s; 
     z-index:12;
-}
+} */
 
 
 .header {
@@ -182,6 +207,17 @@ a {
 
 @media screen and (max-width:800px) {
 
+
+    .hero {
+        background-image:url('img.png');
+        background-size:cover;
+        height:100vh;
+        width: auto;
+    }
+
+    .hero img {
+        display: none;
+    }
     .main{
         height:100vh;
         width:100%;
@@ -189,18 +225,17 @@ a {
     }  
     
     .sometext {
-    font-family: 'Open Sans',sans-serif;
-    font-size: 40px;
-    width: 100%;
-    margin: 0 auto;
-    color:grey;
-    z-index:1; 
-    position:absolute;
-    display: flex;
-    justify-content: center;
-    align-self:center;
-    top:500px;
-    transition:ease 2s;
+        font-family: 'Open Sans',sans-serif;
+        font-size: 40px;
+        width: 100%;
+        margin: 0 auto;
+        color:white;
+        z-index:1; 
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-self:center;
+        top:400px;
     }
 
     .image {
