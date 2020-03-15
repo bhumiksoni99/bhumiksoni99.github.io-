@@ -4,7 +4,6 @@ html {
  }
  
 body {
-    background-color: black;
     perspective: 100px;  
     margin:0;
     padding:0; 
