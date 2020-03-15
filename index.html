@@ -38,23 +38,33 @@
   </div>
 </nav>
 
-      <div class= "main" >   
+      <section class="hero" id="js-hero" >
+        <img data-sound="vespa" src="img.png" alt="scooter">
+      </section>
+
+      <!-- <div class= "main" >   
            
       </div>
       <div class="image">
         <img data-sound="vespa" src="scooter.svg" height="300px" width="300px" alt="scooter">
-      </div>
+      </div> -->
        
    
     <div class="sometext">
-      This is some text.
+      SOME TEXT
     </div>
 
     <div class="info" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease" data-aos-offset="200">
       do you love the rain does it make you dance when your are drunk with your friends at a party.
     </div>
+    <div class="our" data-aos="fade-down">
+      Our Scooter
+    </div>
+    <div class="ourScooter" data-aos="fade-up">
+      Sustainable - spanning countries & communties.
+    </div>
     
-      <div class="demo" data-sound="vespa" id="scooter" style="background-color:rgb(161, 159, 159);justify-content: center;align-self:center;display: flex;@media screen and (max-width:800px) :
+      <div class="demo" data-sound="vespa" id="scooter" style="background-color:white;justify-content: center;margin-top:-20px;align-self:center;display: flex;@media screen and (max-width:800px) :
         align-items:center;">
         <model-viewer src="scene.gltf" alt="A 3D model of an astronaut" poster="scooter.png" preload auto-rotate shadow-intensity="2" camera-controls style="height:100vh;width:80vw;display:flex;padding:60px">
             <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px;display:flex;">
@@ -62,6 +72,7 @@
             </button>
         </model-viewer> 
     </div> 
+
 
     <div class="phone" id="app">
       <div class="container">
@@ -146,16 +157,16 @@ $(document).ready(function(){
         }
     })
 })
-$(document).ready(function(){
-    $(window).scroll(function(){
-        if($(this).scrollTop()>0){
-            $('.main').css({"opacity":"0"})
-        }
-        else{
-            $('.main').css({"opacity":"1"})
-        }
-    })
-})
+// $(document).ready(function(){
+//     $(window).scroll(function(){
+//         if($(this).scrollTop()>0){
+//             $('.main').css({"opacity":"0"})
+//         }
+//         else{
+//             $('.main').css({"opacity":"1"})
+//         }
+//     })
+// })
 
 $(window).scroll(function(){
   if($(window).width() <= 400) {
@@ -167,6 +178,7 @@ $(window).scroll(function(){
     $('.sometext').css({'font-size':'40px','opacity':'1'})
   }
 }
+
   else {
   var scrollPos = $(this).scrollTop();
   if(scrollPos > 0 && scrollPos < 390){
@@ -177,6 +189,12 @@ $(window).scroll(function(){
   }
 }
 })
+
+$(window).scroll(function(){
+    var scrollPos = $(this).scrollTop()       
+         $('#js-hero').css({"width":(100+scrollPos/5)+ "%"})
+    })
+
 
   $(window).scroll(function(){
     var scrollPos = $(this).scrollTop()
