@@ -231,13 +231,15 @@ $(window).scroll(function(){
     }
     })  
 
+    var scrollPhone = $('.phone').offset()
+    var height = $('.phone').height()
+
     $(window).scroll(function(){
       var scroll = $(this).scrollTop()
-        if( scroll<3000){
+        if( scroll-scrollPhone.top < -(height/4)){
             $('#one').css({"background-color":"green"})
             $('.trackImage').attr("src","scooter.svg")
             $('.trackText').html("Download our App to get cool e scooters")
-            $('.data-aos').val('fade-in')
         }
         else{
             $('#one').css({"background-color":"black"})
@@ -246,12 +248,11 @@ $(window).scroll(function(){
 
     $(window).scroll(function(){
       var scroll = $(this).scrollTop()
-      console.log(scroll)
-        if(scroll > 3000 && scroll < 3150){
+      console.log(scroll-scrollPhone.top)
+        if(scroll - scrollPhone.top > 0 && scroll - scrollPhone.top < height/6){
             $('#two').css({"background-color":"green"})
             $('.trackImage').attr("src","scooter.png")
             $('.trackText').html("This Is Gospel")
-            $('.trackText').show('fade')
         }
         else{
             $('#two').css({"background-color":"black"})    
@@ -260,12 +261,10 @@ $(window).scroll(function(){
 
     $(window).scroll(function(){
       var scroll = $(this).scrollTop()
-      console.log(scroll)
-        if(scroll > 3150){
+        if(scroll -scrollPhone.top > height/6){
             $('#three').css({"background-color":"green"})
             $('.trackImage').attr("src","scooter.svg")
             $('.trackText').html("I Think It Works")
-            $('.trackText').show('fade')
         }
         else{
           $('#three').css({"background-color":"black"})
