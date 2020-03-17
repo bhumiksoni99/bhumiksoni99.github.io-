@@ -43,6 +43,28 @@ body {
     border-radius: 5px;
 }
 
+.track1 {
+    height: 30px;
+    width: 30px;
+    border:solid 1px white; 
+    background-color: green;
+    border-radius:15px;
+    position:absolute;
+    left:15%;
+    transition:0.2s;
+    
+    
+}
+
+.line {
+border-left: 1px solid white;
+  height: 50px;
+  position: relative;
+  left:16%;
+  margin: 20px 0;
+
+}
+
 
 .hero img {
     width: 100%;
@@ -177,14 +199,6 @@ body {
     font-size:40px;
     text-align: center;
     display: block;
-}
-
-#one {
-    background-color: black;
-    height:20px;
-    width:20px;
-    border:solid 2px green;
-    border-radius: 10px;
 }
 
 nav {

@@ -29,7 +29,7 @@
         <a class="nav-link" style=" color: aliceblue; " href="#scooter">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style=" color: aliceblue; " href="#app">Link</a>
+        <a class="nav-link" style=" color: aliceblue; " href="#start">Link</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" style=" color: aliceblue; " href="#">Disabled</a>
@@ -84,9 +84,16 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-          Download
-          <br>
+          <span class="track1" id="one">  </span>
+            <span>Download</span>
+            <div class="line">
+            </div>
+            <span class="track1" id="two">  </span>
           Safe
+          <div class="line">
+          </div>
+          <span class="track1" id="three">  </span>
+          Ride
         </div>
         <div class="col-sm-4">
 
@@ -177,7 +184,7 @@ $(window).scroll(function(){
           $('#js-hero').css({"width":(100+scrollPos/5)+ "%"})
           }
         else{
-            $('#js-hero').css({"width":"100%"})
+            $('#js-hero').css({"width":"100vw"})
             }
       }
       else {
@@ -189,6 +196,40 @@ $(window).scroll(function(){
             $('#js-hero').css({"width":"100%"})
             }
     }
+    })
+
+    $(window).scroll(function(){
+      var scroll = $(this).scrollTop()
+      console.log(scroll)
+        if( scroll<3000){
+            $('#one').css({"background-color":"green"})
+        }
+        else{
+            $('#one').css({"background-color":"black"})
+        }
+    })
+
+    $(window).scroll(function(){
+      var scroll = $(this).scrollTop()
+      console.log(scroll)
+        if(scroll > 3000 && scroll < 3100){
+            $('#two').css({"background-color":"green"})
+        }
+        else{
+            $('#two').css({"background-color":"black"})
+        }
+    })
+
+    $(window).scroll(function(){
+      var scroll = $(this).scrollTop()
+      console.log(scroll)
+        if(scroll > 3100){
+            $('#three').css({"background-color":"green"})
+        }
+        else{
+          $('#three').css({"background-color":"black"})
+
+        }
     })
   
 
