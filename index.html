@@ -32,7 +32,7 @@
         <a class="nav-link" style=" color: aliceblue; " href="#start">Link</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style=" color: aliceblue; " href="#">Disabled</a>
+        <a class="nav-link" style=" color: aliceblue; " href="#why-us">Why Us?</a>
       </li>
     </ul>
   </div>
@@ -60,15 +60,17 @@
     <div class="info" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease" data-aos-offset="200">
       do you love the rain does it make you dance when your are drunk with your friends at a party.
     </div>
-    <div class="container">
-      <div class="our" data-aos="fade-down">
-        Our Scooter
-      </div>
+    <div style="background-color: white;">
       <div class="container">
-      <div class="ourScooter" data-aos="fade-up">
-        Sustainable - spanning countries & <br> communties.
-      </div>
-  </div>
+        <div class="our" data-aos="fade-down">
+          Our Scooter
+        </div>
+        <div class="container">
+        <div class="ourScooter" data-aos="fade-up">
+          Sustainable - spanning countries & <br> communties.
+        </div>
+    </div>
+    </div>
 </div>
       <div class="demo" data-sound="vespa" id="scooter" style="background-color:white;justify-content: center;margin-top:-20px;align-self:center;display: flex;;width:100%;@media screen and (max-width:800px) :
         align-items:center;">
@@ -85,7 +87,7 @@
       <div class="row">
         <div class="col-sm-4">
           <span class="track1" id="one">  </span>
-            <span>Download</span>
+            Download
             <div class="line">
             </div>
             <span class="track1" id="two">  </span>
@@ -95,15 +97,40 @@
           <span class="track1" id="three">  </span>
           Ride
         </div>
-        <div class="col-sm-4">
-
+        <div class="col-sm-4" style="transition:ease-in 1;">
+          <img class="trackImage">
         </div>
         <div class="col-sm-4">
-          Download our App to get cool e scooters
+          <br><br><br><br>
+          <p class="trackText" data-aos="fade-in"></p>
         </div>
       </div>
     </div>
   </div>
+
+  <section id="why-us">
+    <div class="container">
+        <h2 data-aos="fade-up">Why WheelBox?</h2>
+        <div class="row">
+            <div class="col-sm-4" data-aos="fade-up">
+                <h3>Teams</h3>
+                <p>Our strong sense of identification with client projects means that we are constantly striving to provide solutions, even for issues they aren’t yet aware of. To this end, we adopt a progressive approach to technology and marketing techniques.</p>
+
+           </div>
+           <div class="col-sm-4" data-aos="fade-down">
+               <h3>True Partners</h3>
+               <p>Our strong sense of identification with client projects means that we are constantly striving to provide solutions, even for issues they aren’t yet aware of. To this end, we adopt a progressive approach to technology and marketing techniques.  </p>
+           </div>
+
+           <div class="col-sm-4" data-aos="fade-up">
+               <h3>Global Know-How</h3>
+               <p>Our strong sense of identification with client projects means that we are constantly striving to provide solutions, even for issues they aren’t yet aware of. To this end, we adopt a progressive approach to technology and marketing techniques.  </p>
+
+           </div>
+        </div>
+
+    </div>
+</section>
    
 
       
@@ -120,6 +147,12 @@
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 <!--jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script
+  src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"
+  integrity="sha256-xI/qyl9vpwWFOXz7+x/9WkG5j/SVnSw21viy8fWwbeE="
+  crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <!--animate on scroll-->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -149,7 +182,7 @@ $(window).scroll(function(){
   if($(window).width() <= 400) {
     var scrollPos = $(this).scrollTop();
   if(scrollPos > 0 && scrollPos < 400){
-    $('.sometext').css({'font-size':220 + scrollPos +'%'})   
+    $('.sometext').css({'font-size':220 + scrollPos/1.4 +'%'})   
   }
   else {
     $('.sometext').css({'font-size':'40px','opacity':'1'})
@@ -181,7 +214,7 @@ $(window).scroll(function(){
     $(window).scroll(function(){
       if(window.width<=400){
         if(scrollPos>0 && scrollPos<200){
-          $('#js-hero').css({"width":(100+scrollPos/5)+ "%"})
+          $('#js-hero').css({"width":"100vw"})
           }
         else{
             $('#js-hero').css({"width":"100vw"})
@@ -196,13 +229,15 @@ $(window).scroll(function(){
             $('#js-hero').css({"width":"100%"})
             }
     }
-    })
+    })  
 
     $(window).scroll(function(){
       var scroll = $(this).scrollTop()
-      console.log(scroll)
         if( scroll<3000){
             $('#one').css({"background-color":"green"})
+            $('.trackImage').attr("src","scooter.svg")
+            $('.trackText').html("Download our App to get cool e scooters")
+            $('.data-aos').val('fade-in')
         }
         else{
             $('#one').css({"background-color":"black"})
@@ -212,23 +247,28 @@ $(window).scroll(function(){
     $(window).scroll(function(){
       var scroll = $(this).scrollTop()
       console.log(scroll)
-        if(scroll > 3000 && scroll < 3100){
+        if(scroll > 3000 && scroll < 3150){
             $('#two').css({"background-color":"green"})
+            $('.trackImage').attr("src","scooter.png")
+            $('.trackText').html("This Is Gospel")
+            $('.trackText').show('fade')
         }
         else{
-            $('#two').css({"background-color":"black"})
+            $('#two').css({"background-color":"black"})    
         }
     })
 
     $(window).scroll(function(){
       var scroll = $(this).scrollTop()
       console.log(scroll)
-        if(scroll > 3100){
+        if(scroll > 3150){
             $('#three').css({"background-color":"green"})
+            $('.trackImage').attr("src","scooter.svg")
+            $('.trackText').html("I Think It Works")
+            $('.trackText').show('fade')
         }
         else{
           $('#three').css({"background-color":"black"})
-
         }
     })
   
