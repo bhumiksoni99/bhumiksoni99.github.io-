@@ -41,13 +41,13 @@
       <section class="hero" id="js-hero" >
         <img src="img.png" alt="scooter">
       </section>
-
-      <!-- <div class= "main" >   
+<!-- 
+      <div class= "main" >   
            
-      </div>
+      </div> -->
       <div class="image">
         <img data-sound="vespa" src="scooter.svg" height="300px" width="300px" alt="scooter">
-      </div> -->
+      </div>
        
    
     <div class="sometext">
@@ -57,8 +57,10 @@
     
     
 
-    <div class="info" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease" data-aos-offset="200">
+    <div class="info" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease" data-aos-offset="200">
+      <div  >
       do you love the rain does it make you dance when your are drunk with your friends at a party.
+    </div>
     </div>
     <div style="background-color: white;">
       <div class="container">
@@ -72,9 +74,9 @@
     </div>
     </div>
 </div>
-      <div class="demo" data-sound="vespa" id="scooter" style="background-color:white;justify-content: center;margin-top:-20px;align-self:center;display: flex;;width:100%;@media screen and (max-width:800px) :
+      <div class="demo" data-sound="vespa" id="scooter" style="background-color:white;justify-content:center;padding-top:-20px;padding-bottom:20px;align-self:center;display: flex;;width:100%;@media screen and (max-width:800px) :
         align-items:center;">
-        <model-viewer src="scene.gltf" alt="A 3D model of an astronaut" poster="scooter.png" preload auto-rotate shadow-intensity="2" camera-controls style="height:100vh;width:100vw;display:flex;padding:60px">
+        <model-viewer src="out.glb" alt="A 3D model of an astronaut" poster="scooter.png" preload auto-rotate shadow-intensity="2" camera-controls style="height:100vh;width:100vw;display:flex;padding:60px">
             <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px;display:flex;">
                 👋 Activate AR
             </button>
@@ -91,14 +93,14 @@
             <div class="line">
             </div>
             <span class="track1" id="two">  </span>
-          Safe
-          <div class="line">
+            Scan
+            <div class="line">
           </div>
-          <span class="track1" id="three">  </span>
-          Ride
-        </div>
-        <div class="col-sm-4" style="transition:ease-in 1;">
-          <img class="trackImage">
+            <span class="track1" id="three">  </span>
+            Ride
+            </div>
+        <div class="col-sm-4" data-aos="fade-in">
+          <img class="trackImage" style="object-fit: fill;">       
         </div>
         <div class="col-sm-4">
           <br><br><br><br>
@@ -113,22 +115,18 @@
         <h2 data-aos="fade-up">Why WheelBox?</h2>
         <div class="row">
             <div class="col-sm-4" data-aos="fade-up">
-                <h3>Teams</h3>
-                <p>Our strong sense of identification with client projects means that we are constantly striving to provide solutions, even for issues they aren’t yet aware of. To this end, we adopt a progressive approach to technology and marketing techniques.</p>
-
-           </div>
+              <h3>Teams</h3>
+              <p>Our strong sense of identification with client projects means that we are constantly striving to provide solutions, even for issues they aren’t yet aware of. To this end, we adopt a progressive approach to technology and marketing techniques.</p>
+            </div>
            <div class="col-sm-4" data-aos="fade-down">
                <h3>True Partners</h3>
                <p>Our strong sense of identification with client projects means that we are constantly striving to provide solutions, even for issues they aren’t yet aware of. To this end, we adopt a progressive approach to technology and marketing techniques.  </p>
            </div>
-
            <div class="col-sm-4" data-aos="fade-up">
                <h3>Global Know-How</h3>
                <p>Our strong sense of identification with client projects means that we are constantly striving to provide solutions, even for issues they aren’t yet aware of. To this end, we adopt a progressive approach to technology and marketing techniques.  </p>
-
            </div>
         </div>
-
     </div>
 </section>
    
@@ -136,8 +134,6 @@
       
        
 <!-- <audio id="vespa" src="Bb.mp3"></audio>  -->
-
-
 
 <!-- Import the component -->
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
@@ -156,6 +152,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <!--animate on scroll-->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="scrollFix.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     $(window).scroll(function(){
@@ -178,8 +175,24 @@ $(document).ready(function(){
 //     })
 // })
 
+var previous = 0;
+
 $(window).scroll(function(){
-  if($(window).width() <= 400) {
+  var scrollH = $(this).scrollTop();  
+        if(previous < scrollH && scrollH < $('.hero').height()){
+            $('.image').animate({'right': scrollH*8 + '%'});
+            // $('.image').css({'display':'flex','align-items':'left','justify-content':'flex-start'})
+        }
+        else{
+            // $('.image').css({'align-items':'center','justify-content':'center'})
+            $('.image').animate({'left': scrollH+ '%'})
+        }
+        previous = scrollH;
+  })
+
+
+$(window).scroll(function(){
+  if($(window).width() <= 400) {    
     var scrollPos = $(this).scrollTop();
   if(scrollPos > 0 && scrollPos < 400){
     $('.sometext').css({'font-size':220 + scrollPos/1.4 +'%'})   
@@ -192,11 +205,10 @@ $(window).scroll(function(){
   var scrollPos = $(this).scrollTop();
   if(scrollPos > 0 ){
     if(scrollPos>480){
-      $('.sometext').css({'opacity':'0'})
+      $('.sometext').css({'opacity':'1'})
     }
     else{
     $('.sometext').css({'font-size':400 + scrollPos*2 +'%','opacity':'1'})
-      
     } 
   }
   else {
@@ -206,10 +218,9 @@ $(window).scroll(function(){
 }
 })
 
-// $(window).scroll(function(){
-//     var scrollPos = $(this).scrollTop()       
-//          $('#js-hero').css({"width":(100+scrollPos/5)+ "%"})
-//     })
+var scrollPhone = $('.phone').offset()
+var height = $('.phone').height()
+
 
     $(window).scroll(function(){
       if(window.width<=400){
@@ -231,9 +242,6 @@ $(window).scroll(function(){
     }
     })  
 
-    var scrollPhone = $('.phone').offset()
-    var height = $('.phone').height()
-
     $(window).scroll(function(){
       var scroll = $(this).scrollTop()
         if( scroll-scrollPhone.top < -(height/4)){
@@ -248,25 +256,27 @@ $(window).scroll(function(){
 
     $(window).scroll(function(){
       var scroll = $(this).scrollTop()
-      console.log(scroll-scrollPhone.top)
-        if(scroll - scrollPhone.top > 0 && scroll - scrollPhone.top < height/6){
+        if(scroll - scrollPhone.top > -(height/4) && scroll - scrollPhone.top < height/6){
             $('#two').css({"background-color":"green"})
-            $('.trackImage').attr("src","scooter.png")
+            $('.trackImage').attr("src","scooter.svg")
             $('.trackText').html("This Is Gospel")
         }
         else{
             $('#two').css({"background-color":"black"})    
         }
-    })
+    })   
 
     $(window).scroll(function(){
       var scroll = $(this).scrollTop()
-        if(scroll -scrollPhone.top > height/6){
+        if(scroll -scrollPhone.top > height/6 && scroll -scrollPhone.top < height/3 ){
             $('#three').css({"background-color":"green"})
             $('.trackImage').attr("src","scooter.svg")
             $('.trackText').html("I Think It Works")
         }
-        else{
+        // if(scroll -scrollPhone.top > height/3 ){
+        //   $('#start').css({"position":"absolute"})
+        // }
+        else {
           $('#three').css({"background-color":"black"})
         }
     })
