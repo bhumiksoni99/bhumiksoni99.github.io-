@@ -46,7 +46,7 @@
            
       </div> -->
       <div class="image">
-        <img data-sound="vespa" src="scooter.svg" height="300px" width="300px" alt="scooter">
+        <img data-sound="vespa" src="02.png" height=400px alt="scooter">
       </div>
        
    
@@ -184,8 +184,8 @@ $(window).scroll(function(){
             // $('.image').css({'display':'flex','align-items':'left','justify-content':'flex-start'})
         }
         else{
-            // $('.image').css({'align-items':'center','justify-content':'center'})
-            $('.image').animate({'left': scrollH+ '%'})
+            $('.image').css({'align-items':'center','justify-content':'center','display':'flex'})
+            // $('.image').animate({'left': scrollH*8 + '%'})
         }
         previous = scrollH;
   })
